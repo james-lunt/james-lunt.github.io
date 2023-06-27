@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - Personal Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: Jun 13 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/opt1.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/opt2.png" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/opt3.png" alt="">
+                </div>
+                
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/opt5.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/portfolio/opt4.png" alt="">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Optimisation Algorithms for Hyperparameter Tuning</h3>
+              <ul>
+                <li><strong>Category</strong>: Machine Learning</li>
+                <li><strong>Technologies</strong>: Python, Scikit-learn, Tensorflow, Pytorch, Deep-Neural-Networks <a href="https://docs.ray.io/en/latest/tune/index.html" target="_blank">Ray-Tune</a>, Pandas, Matplotlib</li>
+                <li><strong>Skills</strong>: Research</li>
+                <li><strong>Repository</strong>: <a href="https://github.com/james-lunt/gradient-free-hyperparameter-selection-algorithms" target="_blank">Github Link</a></li>
+                <li><strong>Report</strong>: <a href="https://drive.google.com/file/d/1xtY85MmyMM4ABfsGluowy1NkoFGDSAhj/view?usp=drive_link" target="_blank">Read Here</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <p>        
+                This paper investigates the performance of two gradient-free optimisation algorithms for Machine Learning
+                hyperparameter selection. These hyperparameters are selected for a Convolutional-Neural-Network
+                designed to classify on the CIFAR-10 Dataset. The following are the hyperparameters to be selected,
+                SGD mini-batch size, Adam α, momentum variables β1, β2 and constant α.
+              </p>
+              <p>
+                The first algorithm is Pattern Search which is a local search algorithm that mantains a grid of all
+                hyperparameter permutations and explores the grid by evaluating permutations from region to region.
+              </p>
+              <p>
+                The second algorithm is <a href="https://www.deepmind.com/blog/population-based-training-of-neural-networks" traget="_blank">Population Based Training</a> 
+                which is a global search method proposed by <a href="https://www.deepmind.com/" target="_blank">Deep Mind</a> and is a variant of 
+                <a href="https://en.wikipedia.org/wiki/Random_search" target="_blank">Random Search</a>. This algorithm simultaneously trains multiple instances of
+                the neural network where, occasionally, some instances will copy the parameters of the best performing
+                instances, perturb them slightly and continue to train.
+              </p>
+              <p>
+                To evaluate the performance of these algorithms, <a href="https://en.wikipedia.org/wiki/Hyperparameter_optimization" target="_blank">Grid Search</a> is used as a baseline comparison algorithm.
+                Grid Search takes a brute-force approach and consecutively evaluates every permutation of hyperparameters
+                 and returns the one that produces the highest score. The output of Grid Search will inspire the range
+                of hyperparameters to be used in Pattern Search and Population Based Training as well.
+              </p>
+              <p>
+                It is found that although each algorithm reaches similar accuracy scores on the CIFAR-10 dataset, Population-Based-Training proves to be the most efficient
+                gradient free optimsation algorithm since it fine-tunes hyperparameters during training.
+                Furthermore, Pattern Search and Population-Based-Training significantly outperfrom the brute-force approach of Grid Search.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
