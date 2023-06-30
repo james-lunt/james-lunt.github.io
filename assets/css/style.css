@@ -1208,7 +1208,7 @@ section {
   font-size: 13px;
 }
 
-#portfolio-image {
-  width: 350px; /* Adjust the width as needed */
-  height: auto; /* This will maintain the aspect ratio */
-}
+/*#portfolio-image {
+  width: 350px;
+  height: auto;
+}*/
