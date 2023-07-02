@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Portfolio Details - Personal Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: MyResume
+  * Updated: Jun 13 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper">
+              <div class="swiper-wrapper align-items-center">
+
+                  <img src="assets/img/portfolio/travelling_sales.png" alt="">
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3>Travelling Salesperson Challenge</h3>
+              <ul>
+                <li><strong>Category</strong>: Embedded Systems</li>
+                <li><strong>Technologies</strong>: C, OpenMP, SIMD Vector Programming, Resource Constrained Devices</li>
+                <li><strong>Repository</strong>: <a href="https://github.com/james-lunt/travelling-salesperson-challenge/blob/main/mytour.c/" target="_blank">Github Link</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <p>
+                A project to speed up a sequential C program that solves the Travelling Sales Person problem. Achieved a speed up of 29.5% using OpenMP threading and SIMD vector programming.
+              </p>
+              <p>
+                We based our optimised program on the code given originally in sales.c.
+                We tried a few things;
+                Firstly we threaded the inner loop but this slowed down the program as we had to write a crticial section 
+                which only one thread could access at a time.
+              </p>
+              <p>
+                Secondly we tried to vectorise the function that calculates the distance from point to point with the library "xmmintrin.h"
+                as it offered a square vector function.
+                This did not work however as it was hard to manually vectories in an elegant way especially with the branch "if (!visited[j])"
+                It was also difficult to keep track of the cities' indexes as their distances were being mashed up in Vectors.
+              </p>
+              <p>
+                We came to our solution by altering the original program in a way that would allow each thread to work correctly without
+                having to enter a Critical Section.
+                Our solution lead us to first creating a ncities*ncities table which could simply done with threading with a "#pragma omp parallel for"
+                on the outer loop and then we discovered that a "#pragma omp simd" was optimal for the inner loop.
+                Once we created this table we then started creating the trip itinery by searching through the current points (ThisPt) distances and finding the closest
+                then update ThisPt to that point and loop.
+                We put a "#pragma omp SIMD" declaration above the inner loop in this this part and also declared the distance function as "#pragma omp declare simd"
+                as this lead to a small increase in optimisation.
+              </p>
+              <p>
+                When we ran the original code with 10,000 cities we averaged 2022007 microseconds
+                This code runs 29.5% quicker than the original, running on average at 1427421 microseconds
+                Load this file onto a stoker machine and run the following compiling comand using GCC.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
